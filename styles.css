@@ -1,0 +1,62 @@
+/* Background and color settings */
+body {
+    background-color: rgba(73, 49, 212, 60);
+}
+
+/* Navbar custom styles */
+.navbar {
+    margin-bottom: 40px;
+}
+
+/* Custom navbar numbering styles */
+.navbar-nav .nav-item .nav-link::before {
+    content: "0" counter(nav-item) "."; /* Add a number with a dot before each link */
+    margin-right: 5px;
+    color: #64FFDA; /* Green color for the number (you can change this) */
+    font-size: 1.5rem; /* Adjust font size */
+    text-align: right;
+    counter-increment: nav-item; /* Increment the counter for each nav item */
+}
+
+/* Initialize counter for the navbar */
+.navbar-nav {
+    counter-reset: nav-item; /* Resets counter for navbar items */
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-size: 1.5rem;
+    color: #D2EB95;
+}
+
+.navbar .btn {
+    font-size: 1.5rem;
+}
+
+/* Hero section styles */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #D2EB95; /* Big words color */
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.hero-section img {
+    border-radius: 50%;
+    width: 200px; /* Adjust the image size */
+    height: 200px;
+}
+
+/* Down arrow styling */
+.down-arrow {
+    font-size: 3rem;
+    color: #64FFDA;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
