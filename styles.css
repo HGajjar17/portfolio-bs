@@ -137,3 +137,65 @@ body {
         transform: translateY(10px); /* Move down */
     }
 }
+
+
+/* Work Section Styling */
+.work-section {
+    background-color: #f8f9fa00; /* Light background for contrast */
+    color: #333; /* Dark text for readability */
+}
+
+.work-section h2 {
+    font-size: 2.5rem;
+    color: #64FFDA; /* Accent color */
+    font-family: "Inter", sans-serif;
+}
+
+/* Individual Work Item */
+.work-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white; /* Ensure text is readable over the background */
+}
+
+/* Transparent overlay to darken the background image */
+.work-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Black overlay with 20% opacity */
+    border-radius: 8px;
+    z-index: 1;
+}
+
+/* Text styling inside the work item */
+.work-item h3 {
+    position: relative;
+    font-size: 1.5rem;
+    color: #64FFDA;
+    margin-bottom: 10px;
+    z-index: 2; /* Ensures text is above the overlay */
+}
+
+.work-item p {
+    position: relative;
+    font-size: 1rem;
+    color: #fff;
+    z-index: 2; /* Ensures text is above the overlay */
+}
+
+/* Hover Effect */
+.work-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
