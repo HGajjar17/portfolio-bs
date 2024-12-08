@@ -1,35 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 /* Background and color settings */
 body {
-    background-color: rgba(73, 49, 212, 60);
+    background-color: rgb(73, 50, 136);
 }
 
 /* Navbar custom styles */
+/* Navbar styles */
 .navbar {
-    margin-bottom: 40px;
+    background-color: rgb(73, 50, 136); /* Background for the navbar */
+    padding: 10px 20px;
 }
 
-/* Custom navbar numbering styles */
-.navbar-nav .nav-item .nav-link::before {
-    content: "0" counter(nav-item) "."; /* Add a number with a dot before each link */
-    margin-right: 5px;
-    color: #64FFDA; /* Green color for the number (you can change this) */
-    font-size: 1.5rem; /* Adjust font size */
-    text-align: right;
-    counter-increment: nav-item; /* Increment the counter for each nav item */
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+    color: #64FFDA;
+    margin-right: 20px;
 }
 
-/* Initialize counter for the navbar */
-.navbar-nav {
-    counter-reset: nav-item; /* Resets counter for navbar items */
-}
-
-.navbar-nav .nav-item .nav-link {
-    font-size: 1.5rem;
+.navbar-nav .nav-link:hover {
     color: #D2EB95;
 }
 
-.navbar .btn {
-    font-size: 1.5rem;
+.btn-outline-light {
+    border-color: #64FFDA;
+    color: #64FFDA;
+}
+
+.btn-outline-light:hover {
+    background-color: #64FFDA;
+    color: rgb(73, 50, 136);
+}
+
+/* Animation styles for the logo */
+.logo-wrapper {
+    width: 100px;
+    height: 100px;
+    background-color: #0A1930; /* Background color for the hexagon */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); 
+    /* Hexagon shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid #D2EB95; /* Border color */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+    cursor: pointer;
+}
+
+/* Text inside the hexagon */
+.logo-text {
+    color: #D2EB95; /* Dark text */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Hover Effect: Trigger Animation */
+.logo-wrapper:hover {
+    animation: sideways 0.8s ease-in-out forwards; /* Play the animation */
+}
+
+/* Keyframes for sideways movement */
+@keyframes sideways {
+    0% {
+        transform: translateX(0); /* Initial position */
+    }
+    25% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0); /* Return to initial position */
+    }
 }
 
 /* Hero section styles */
@@ -41,22 +89,51 @@ body {
     color: #D2EB95; /* Big words color */
 }
 
+.hero-section h2 {
+    font-size: 1.5rem;
+    color: #64FFDA;
+    margin-bottom: 10px;
+    font-family: "Inter", sans-serif;
+}
+
 .hero-section h1 {
     font-size: 4rem;
     font-weight: bold;
+    color: #D2EB95;
+    font-family: "K2D", sans-serif;
+    /* font-weight: 100;
+    font-style: normal; */
+}
+
+.hero-section p {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    margin-top: 20px;
+    font-family: "K2D", sans-serif;
+    /* font-style: normal; */
 }
 
 .hero-section img {
     border-radius: 50%;
     width: 200px; /* Adjust the image size */
     height: 200px;
+    margin: 20px auto; /* Center the image vertically */
 }
 
 /* Down arrow styling */
 .down-arrow {
     font-size: 3rem;
     color: #64FFDA;
-    text-align: center;
-    margin-top: 20px;
     cursor: pointer;
+    animation: bounce 1.5s infinite; /* Bouncing animation */
+}
+
+/* Bouncing Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(20px); /* Initial and final position */
+    }
+    50% {
+        transform: translateY(10px); /* Move down */
+    }
 }
