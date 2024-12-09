@@ -37,7 +37,7 @@ body {
 /* Animation styles for the logo */
 .logo-wrapper {
     width: 100px;
-    height: 100px;
+    /* height: 100px; */
     background-color: #0A1930; /* Background color for the hexagon */
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); 
     /* Hexagon shape */
@@ -81,17 +81,24 @@ body {
 }
 
 /* Hero section styles */
+/* Hero Section */
 .hero-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #D2EB95; /* Big words color */
+    color: #D2EB95; /* Text color */
 }
 
+/* Top Heading ("What's up") */
+.top-heading {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #64FFDA; /* Accent color */
+    font-family: "K2D", sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Main Content Styling */
 .hero-section h2 {
     font-size: 1.5rem;
-    color: #64FFDA;
+    color: #64FFDA; /* Accent color for "Hi, my name is" */
     margin-bottom: 10px;
     font-family: "Inter", sans-serif;
 }
@@ -101,8 +108,6 @@ body {
     font-weight: bold;
     color: #D2EB95;
     font-family: "K2D", sans-serif;
-    /* font-weight: 100;
-    font-style: normal; */
 }
 
 .hero-section p {
@@ -110,15 +115,39 @@ body {
     color: #FFFFFF;
     margin-top: 20px;
     font-family: "K2D", sans-serif;
-    /* font-style: normal; */
 }
 
+/* Profile Image Styling */
 .hero-section img {
-    border-radius: 50%;
-    width: 200px; /* Adjust the image size */
+    border-radius: 50%; /* Circular image */
+    width: 200px; /* Image size */
     height: 200px;
-    margin: 20px auto; /* Center the image vertically */
+    margin: 20px auto;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .top-heading {
+        font-size: 3.5rem; /* Adjust heading size */
+    }
+
+    .hero-section h1 {
+        font-size: 3rem; /* Adjust name size */
+    }
+
+    .hero-section p {
+        font-size: 2rem; /* Adjust description size */
+    }
+
+    .hero-section img {
+        width: 150px; /* Smaller image size */
+        height: 150px;
+    }
+}
+
+
+
+/* --------- */
 
 /* Down arrow styling */
 .down-arrow {
@@ -142,7 +171,7 @@ body {
 /* Work Section Styling */
 .work-section {
     background-color: #f8f9fa00; /* Light background for contrast */
-    color: #333; /* Dark text for readability */
+    height: 75vh;
 }
 
 .work-section h2 {
