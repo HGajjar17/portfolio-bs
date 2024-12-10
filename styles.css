@@ -119,10 +119,17 @@ body {
 
 /* Profile Image Styling */
 .hero-section img {
-    border-radius: 50%; /* Circular image */
-    width: 200px; /* Image size */
-    height: 200px;
+    border-radius: 5%; /* Circular image */
+    width: 400px; /* Image size */
+    height: 550px;
     margin: 20px auto;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth animation */
+}
+
+/* Hover Effect for Animation */
+.hero-section img:hover {
+    transform: scale(1.05) rotate(2deg); /* Slight zoom and rotation */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
 }
 
 /* Responsive Adjustments */
@@ -140,10 +147,11 @@ body {
     }
 
     .hero-section img {
-        width: 150px; /* Smaller image size */
-        height: 150px;
+        width: 300px; /* Smaller image size */
+        height: 400px;
     }
 }
+
 
 
 
@@ -179,14 +187,24 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+.work-section .row {
+    display: flex; /* Enable Flexbox on the row */
+    flex-wrap: wrap; /* Ensure proper wrapping on smaller screens */
+}
+
 /* Work Item */
-/* Work Item */
+/* Work Item Cards */
 .work-item {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Spread content evenly inside */
+    height: 100%; /* Ensures cards stretch equally */
+    margin: 0.5rem; /* Add spacing between cards */
     position: relative;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Prevent content overflow */
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5); /* Fallback for cards without images */
 }
 
@@ -229,4 +247,32 @@ body {
 .work-item:hover .card-bg {
     opacity: 0.4; /* Increase visibility slightly on hover */
     transition: opacity 0.3s ease; /* Smooth hover transition */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .work-item {
+        flex: 1 1 100%; /* Cards take full width on smaller screens */
+    }
+    .work-section .row {
+        gap: 1.5rem; /* Add more space between cards for smaller screens */
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Scroll Down Button Styling */
+.scroll-down {
+    font-size: 3rem;
+    color: #64FFDA;
+    text-decoration: none; /* Remove underline */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.scroll-down:hover {
+    transform: translateY(5px); /* Add downward movement on hover */
+    color: #D2EB95; /* Slightly change color on hover */
 }
